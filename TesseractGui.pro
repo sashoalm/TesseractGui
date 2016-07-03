@@ -24,3 +24,6 @@ HEADERS  += mainwindow.h \
 FORMS    += mainwindow.ui
 
 LIBS += -L/usr/local/lib -ltesseract -llept
+
+DISTFILES += \
+    README.txt
