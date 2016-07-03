@@ -28,5 +28,5 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_lineEdit_textChanged(const QString &text)
 {
     ui->widget->setPixmap(text);
-    QtConcurrent::run(runThread, text);
+    QtConcurrent::run(runThread, text, ui->widget);
 }

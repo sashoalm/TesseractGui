@@ -16,6 +16,7 @@ public:
 signals:
 
 public slots:
+    void addRect(const QRect &r);
 
 private:
     QPixmap pixmap;
