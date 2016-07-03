@@ -14,9 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    widget.cpp
+    widget.cpp \
+    thread.cpp
 
 HEADERS  += mainwindow.h \
-    widget.h
+    widget.h \
+    thread.h
 
 FORMS    += mainwindow.ui
+
+LIBS += -L/usr/local/lib -ltesseract -llept

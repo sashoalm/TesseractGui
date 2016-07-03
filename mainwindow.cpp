@@ -1,7 +1,9 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "thread.h"
 
 #include <QFileDialog>
+#include <QtConcurrentRun>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -26,4 +28,5 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_lineEdit_textChanged(const QString &text)
 {
     ui->widget->setPixmap(text);
+    QtConcurrent::run(runThread, text);
 }
