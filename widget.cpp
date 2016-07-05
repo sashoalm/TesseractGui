@@ -29,7 +29,6 @@ void Widget::paintEvent(QPaintEvent *e)
 void Widget::addRect(const QRect &r)
 {
     if (r.isValid()) {
-        qDebug("slot: %d %d %d %d", r.left(), r.right(), r.top(), r.bottom());
         QPainter painter(&pixmap);
         painter.setPen(QColor(0, 0, 255));
         painter.setBrush(QColor(255, 0, 0, 255/2));

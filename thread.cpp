@@ -16,7 +16,6 @@ bool progress(int progress, int left, int right, int top, int bottom)
 
 void runThread(const QString &imageFile, QObject *receiver)
 {
-    char *outText;
     ::receiver = receiver;
 
     tesseract::TessBaseAPI *api = new tesseract::TessBaseAPI();
@@ -35,12 +34,7 @@ void runThread(const QString &imageFile, QObject *receiver)
     monitor.progress_callback = progress;
     api->Recognize(&monitor);
 
-    // Get OCR result
-    outText = api->GetUTF8Text();
-    printf("OCR output:\n%s", outText);
-
     // Destroy used object and release memory
     api->End();
-    delete [] outText;
     pixDestroy(&image);
 }
