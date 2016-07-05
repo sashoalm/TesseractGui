@@ -20,7 +20,10 @@ private slots:
 
     void on_lineEdit_textChanged(const QString &text);
 
+    void on_pushButton_2_clicked();
+
 private:
+    volatile bool cancelFlag;
     Ui::MainWindow *ui;
 };
 

@@ -28,5 +28,11 @@ void MainWindow::on_pushButton_clicked()
 void MainWindow::on_lineEdit_textChanged(const QString &text)
 {
     ui->widget->setPixmap(text);
-    QtConcurrent::run(runThread, text, ui->widget);
+    cancelFlag = false;
+    QtConcurrent::run(runThread, text, ui->widget, &cancelFlag);
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    cancelFlag = true;
 }

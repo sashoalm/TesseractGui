@@ -14,7 +14,13 @@ bool progress(int /*progress*/, int left, int right, int top, int bottom)
     return false;
 }
 
-void runThread(const QString &imageFile, QObject *receiver)
+bool cancel(void* cancel_this, int words)
+{
+    volatile bool *cancelFlag = (volatile bool*) cancel_this;
+    return *cancelFlag;
+}
+
+void runThread(const QString &imageFile, QObject *receiver, volatile bool *cancelFlag)
 {
     ::receiver = receiver;
 
@@ -32,6 +38,8 @@ void runThread(const QString &imageFile, QObject *receiver)
 
     ETEXT_DESC monitor;
     monitor.progress_callback = progress;
+    monitor.cancel = cancel;
+    monitor.cancel_this = (void*) cancelFlag;
     api->Recognize(&monitor);
 
     // Destroy used object and release memory
