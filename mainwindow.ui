@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>471</width>
+    <height>350</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,16 +44,19 @@
       <property name="widgetResizable">
        <bool>true</bool>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
       <widget class="QWidget" name="scrollAreaWidgetContents">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>378</width>
-         <height>150</height>
+         <width>449</width>
+         <height>200</height>
         </rect>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout">
+       <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="Widget" name="widget" native="true"/>
         </item>
@@ -68,7 +71,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>471</width>
      <height>27</height>
     </rect>
    </property>
