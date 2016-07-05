@@ -15,6 +15,7 @@ Widget::~Widget()
 void Widget::setPixmap(const QPixmap &pixmap)
 {
     this->pixmap = pixmap;
+    setMinimumSize(pixmap.size());
     update();
 }
 
