@@ -8,7 +8,7 @@
 static QObject *receiver = 0;
 static int height = 0;
 
-bool progress(int progress, int left, int right, int top, int bottom)
+bool progress(int /*progress*/, int left, int right, int top, int bottom)
 {
     QMetaObject::invokeMethod(receiver, "addRect", Qt::AutoConnection, Q_ARG(QRect, QRect(left, height-top, right-left, -(bottom-top))));
     return false;
