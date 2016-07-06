@@ -14,13 +14,13 @@ bool progress(int /*progress*/, int left, int right, int top, int bottom)
     return false;
 }
 
-bool cancel(void* cancel_this, int words)
+bool cancel(void* cancel_this, int /*words*/)
 {
     volatile bool *cancelFlag = (volatile bool*) cancel_this;
     return *cancelFlag;
 }
 
-void runThread(const QString &imageFile, QObject *receiver, volatile bool *cancelFlag)
+void runThread(const QString &imageFile, QObject *receiver, volatile bool *cancelFlag, volatile bool *isRunning)
 {
     ::receiver = receiver;
 
@@ -45,4 +45,5 @@ void runThread(const QString &imageFile, QObject *receiver, volatile bool *cance
     // Destroy used object and release memory
     api->End();
     pixDestroy(&image);
+    *isRunning = false;
 }

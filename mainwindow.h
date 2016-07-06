@@ -23,7 +23,9 @@ private slots:
     void on_pushButton_2_clicked();
 
 private:
+    void waitForTesseractFinished();
     volatile bool cancelFlag;
+    volatile bool tesseractIsRunning;
     Ui::MainWindow *ui;
 };
 
