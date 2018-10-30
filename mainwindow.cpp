@@ -4,7 +4,12 @@
 
 #include <QFileDialog>
 #include <QTimer>
+
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 0, 0))
+#include <QtConcurrent>
+#else  // QT4
 #include <QtConcurrentRun>
+#endif  // QT5
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
