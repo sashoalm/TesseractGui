@@ -1,0 +1,7 @@
+temp/*
+Debug/
+Release/
+win/*
+Makefile
+Makefile.*
+TesseractGui.pro.*
